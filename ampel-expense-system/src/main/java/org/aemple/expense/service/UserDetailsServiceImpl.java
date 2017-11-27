@@ -1,8 +1,9 @@
 package org.aemple.expense.service;
 
 import org.aemple.expense.dao.UserDetailsDao;
-import org.aemple.expense.model.UserDetails;
+import org.aemple.expense.model.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	UserDetailsDao userdetailsDao;
 	
 	@Override
-	public UserDetails createUserDetails(UserDetails details) {
+	public UserInfo createUserDetails(UserInfo details) {
 		userdetailsDao.createUserDetails(details);
 		// TODO Auto-generated method stub
 		System.out.println(details.toString());
@@ -22,7 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	}
 
 	@Override
-	public UserDetails getUserDetailsById(Long id) {
+	public UserInfo getUserDetailsById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

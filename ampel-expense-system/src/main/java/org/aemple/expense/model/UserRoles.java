@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.springframework.security.core.userdetails.UserDetails;
+
 @Entity(name="user_roles")
 public class UserRoles {
 
@@ -24,7 +26,7 @@ public class UserRoles {
 	private String roleDescription;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "roles")
-	private List<UserDetails> userDetails;
+	private List<UserInfo> userDetails;
 
 	public long getId() {
 		return id;
@@ -50,11 +52,11 @@ public class UserRoles {
 		this.roleDescription = roleDescription;
 	}
 
-	public List<UserDetails> getUserDetails() {
+	public List<UserInfo> getUserDetails() {
 		return userDetails;
 	}
 
-	public void setUserDetails(List<UserDetails> userDetails) {
+	public void setUserDetails(List<UserInfo> userDetails) {
 		this.userDetails = userDetails;
 	}
 

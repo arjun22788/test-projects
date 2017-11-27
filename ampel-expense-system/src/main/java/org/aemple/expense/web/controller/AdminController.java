@@ -1,6 +1,6 @@
 package org.aemple.expense.web.controller;
 
-import org.aemple.expense.model.UserDetails;
+import org.aemple.expense.model.UserInfo;
 import org.aemple.expense.model.UserRoles;
 import org.aemple.expense.service.UserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,9 @@ public class AdminController {
 	
 	@RequestMapping(value="/createUser", method = RequestMethod.GET)
 	public ModelAndView	createUser() {
+		
 		ModelAndView model = new ModelAndView();
-		UserDetails details = new UserDetails();
+		UserInfo details = new UserInfo();
 		details.setFirstName("Robo");
 		details.setUsername("robot");
 		details.setPassword("123456");

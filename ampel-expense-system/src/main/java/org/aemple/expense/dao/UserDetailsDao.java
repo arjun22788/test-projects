@@ -1,10 +1,10 @@
 package org.aemple.expense.dao;
 
-import org.aemple.expense.model.UserDetails;
+import org.aemple.expense.model.UserInfo;
 
 public interface UserDetailsDao {
 
-	public UserDetails createUserDetails(UserDetails details);
-	public UserDetails getUserDetailsById(Long id); 
+	public UserInfo createUserDetails(UserInfo details);
+	public UserInfo getUserDetailsById(Long id); 
 	
 }

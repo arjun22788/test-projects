@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import org.aemple.expense.model.UserDetails;
+import org.aemple.expense.model.UserInfo;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -15,7 +15,7 @@ public class UserDaoImpl implements UserDetailsDao {
 
 	@Override
 	@Transactional
-	public UserDetails createUserDetails(UserDetails details) {
+	public UserInfo createUserDetails(UserInfo details) {
 		System.out.println("dao");
 		System.out.println(details.toString());
 		entityManager.persist(details);
@@ -24,9 +24,9 @@ public class UserDaoImpl implements UserDetailsDao {
 
 	@Override
 	@Transactional
-	public UserDetails getUserDetailsById(Long id) {
+	public UserInfo getUserDetailsById(Long id) {
 
-		return entityManager.find(UserDetails.class, id);
+		return entityManager.find(UserInfo.class, id);
 	}
 
 }
