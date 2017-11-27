@@ -26,7 +26,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 		System.out.println(authentication.getAuthorities().toString());
 		// set our response to OK status
 		httpServletResponse.setStatus(HttpServletResponse.SC_OK);
-		if (authentication.getAuthorities().toString().contains("ROLE_ADMIN")) {
+		if (authentication.getAuthorities().toString().contains("ADMIN")) {
 			System.out.println("hello admin authenticated");
 			responseUrl = "admin";
 		} else {

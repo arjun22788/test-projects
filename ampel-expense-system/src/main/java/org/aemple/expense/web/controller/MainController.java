@@ -1,5 +1,7 @@
 package org.aemple.expense.web.controller;
 
+import org.aemple.expense.service.UserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,7 +15,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 
-	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
+	@Autowired
+	UserDetailsService userDetailsService;
+	
+	/*@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
 	public ModelAndView defaultPage(ModelAndView model) {
 
 		//ModelAndView model = new ModelAndView();
@@ -22,9 +27,9 @@ public class MainController {
 		model.setViewName("hello");
 		return model;
 
-	}
+	}*/
 
-	@RequestMapping(value = "/admin**", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public ModelAndView adminPage(ModelAndView model) {
 		System.out.println("hello Admin");
 		//ModelAndView model = new ModelAndView();
@@ -36,7 +41,7 @@ public class MainController {
 
 	}
 
-	@RequestMapping(value = "/defaultUrl**", method = RequestMethod.GET)
+	@RequestMapping(value = "/defaultUrl", method = RequestMethod.GET)
 	public ModelAndView defauks() {
 		System.out.println("hello User");
 		ModelAndView model = new ModelAndView();
@@ -47,7 +52,7 @@ public class MainController {
 		return model;
 
 	}
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout) {
 

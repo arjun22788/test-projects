@@ -1,5 +1,4 @@
-<%@taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <body>
@@ -28,5 +27,12 @@
 
 
 	</sec:authorize>
+	
+	<c:if test="${pageContext.request.userPrincipal.name != null}">
+			<h2>
+				User : ${pageContext.request.userPrincipal.name} | <a
+					href="j_spring_security_logout"> Logout</a>
+			</h2>
+		</c:if>
 </body>
 </html>

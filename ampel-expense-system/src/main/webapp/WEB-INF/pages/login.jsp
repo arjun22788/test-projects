@@ -53,7 +53,7 @@
 							</c:if>
 
 		<form name='loginForm' role="form" class="login-form"
-			action="<c:url value='/j_spring_security_check' />" method='POST'>
+			action="<c:url value='/j_spring_security_check' />"  method="post">
                             
 			                    	<div class="form-group">
 			                    		<label class="sr-only" for="form-username">Username</label>
@@ -67,6 +67,7 @@
 									<input type="submit" class="btn btn-link-1"
 										value="Sign in!" />
 								</div>
+								
 								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			                    </form>
 		                    </div>
